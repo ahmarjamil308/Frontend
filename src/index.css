@@ -1,0 +1,258 @@
+/* ===== Global ===== */
+* {
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+body {
+  background: linear-gradient(135deg, #f8f9fa, #e8f5e9);
+  font-family: "Segoe UI", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+  background: #2c3e50;
+  padding: 12px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar-title {
+  font-size: 22px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+}
+
+.navbar-title:hover {
+  color: #27ae60;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 12px;
+}
+
+.btn {
+  background: transparent;
+  color: white;
+  border: 2px solid transparent;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #27ae60;
+  transform: scale(1.05);
+}
+
+/* ===== Pages Container ===== */
+.page-container {
+  min-height: calc(100vh - 60px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+.page-heading {
+  font-size: 28px;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* ===== Product Grid ===== */
+.product-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  width: 100%;
+  max-width: 900px;
+}
+
+.product-item {
+  background: white;
+  padding: 18px;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-left: 5px solid #27ae60;
+  animation: fadeIn 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.product-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.product-item h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.product-item p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 12px;
+}
+
+/* ===== Buttons ===== */
+.product-item button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 4px;
+}
+
+.product-item button:hover {
+  transform: scale(1.05);
+}
+
+.view-btn {
+  background: #2ecc71;
+  color: white;
+}
+.view-btn:hover {
+  background: #27ae60;
+}
+
+.edit-btn {
+  background: #3498db;
+  color: white;
+}
+.edit-btn:hover {
+  background: #2980b9;
+}
+
+.delete-btn {
+  background: #e74c3c;
+  color: white;
+}
+.delete-btn:hover {
+  background: #c0392b;
+}
+
+.add-cart-btn {
+  background: #f39c12;
+  color: white;
+}
+.add-cart-btn:hover {
+  background: #e67e22;
+}
+
+/* ===== Forms ===== */
+.form-container {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  margin: 20px auto;
+}
+
+.form-container h2 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.form-container input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 14px;
+  border-radius: 8px;
+  border: 2px solid #27ae60;
+  outline: none;
+  font-size: 14px;
+}
+
+.form-container input:focus {
+  border-color: #2ecc71;
+  box-shadow: 0 0 6px rgba(39, 174, 96, 0.3);
+}
+
+.form-container button {
+  width: 100%;
+  padding: 10px;
+  background: #27ae60;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.form-container button:hover {
+  background: #219150;
+}
+
+/* ===== Cart ===== */
+.cart-container {
+  width: 90%;
+  max-width: 700px;
+  margin: auto;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 12px 16px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.cart-item button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  background: #e74c3c;
+  color: white;
+  cursor: pointer;
+}
+
+.cart-item button:hover {
+  background: #c0392b;
+}
+
+/* ===== Animation ===== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== Footer ===== */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #2c3e50;
+  color: white;
+  margin-top: 20px;
+  border-top: 2px solid #27ae60;
+}
